@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 // 파이어베이스 데이터베이스의 데이터를 받아오는 곳
                 arrayList.clear(); // 기존 배열리스트가 존재하지않게 초기화
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) { // 반복문으로 데이터 List를 추출해냄
-                    memo_list memo_list = snapshot.getValue(memo_list.class); // 만들어뒀던 Together_group_list 객체에 데이터를 담는다.
+                    memo_list memo_list = snapshot.getValue(memo_list.class); // 만들어뒀던 memo_list 객체에 데이터를 담는다.
                     String memo_key = snapshot.getKey();//키값 받아오기(getKey()함수 사용)
                     databaseReference.child("memo").child(memo_key).child("key").setValue(memo_key);//push로 넣은 키값 직접 넣기
                     arrayList.add(memo_list); // 담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
